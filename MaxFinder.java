@@ -1,64 +1,67 @@
 package com.abhi.max;
 /**
- * MaxFinder -- Finding Max Using Generic Class
- *              
+ * MaxFinder -- Finding Maximum from multiple values
+ *              of different data types using Generic
  *
  * @author Abhishek Shigavan
  */
 public class MaxFinder <E extends Comparable <E>>{
-    
-    //instance variables
-    E element1, element2, element3 , max_Element;
-    
+
+    //Defining Generic Array
+    private E [] inputArray;
+    //Generic variable
+    E max_Element;
+
     //parameter constructor
-    public MaxFinder(E element1, E element2, E element3){
-        this.element1 = element1;
-        this.element2 = element2;
-        this.element3 = element3;
+    public MaxFinder(E[] inputArray){
+        this.inputArray = inputArray;
     }
 
     public void find_Max(){
         //calling static / Generic method
-        max_Element = MaxFinder.find_Max(this.element1, this.element2, this.element3);
+        max_Element = MaxFinder.find_Max(this.inputArray);
     }
 /**
- * This method takes generic element
- * & compare it by using compareTo()
- * & returns max element
+ * This method takes Array of multiple
+ * values & compare elements of Array
+ * by using compareTo() & returns max element
  *
- * @param element1
- * @param element2
- * @param element3
- * @param <E>
  * @return max element
  */
-    public static <E extends Comparable<E>> E find_Max(E element1, E element2, E element3) {
-        //setting 1st element as max
-        E max_Element = element1;
-        //comparing 2nd & 3rd no with max using compareTo()
-        if(element2.compareTo(max_Element)>0){
-            max_Element = element2;
-        }
-        if(element3.compareTo(max_Element)>0){
-            max_Element = element3;
+    public static <E extends Comparable<E>> E find_Max(E[] inputArray) {
+
+        //setting 1st element of Array as max
+        E max_Element = inputArray[0];
+
+        for(int i =0; i < inputArray.length; i++){
+            //Taking element to compare with max
+            E elementToCompare = inputArray[i];
+            //comparing element
+            if(elementToCompare.compareTo(max_Element)>0){
+                max_Element = elementToCompare;
+            }
         }
         //printing result
-        System.out.printf("Max between %s, %s, %s is %s \n",element1, element2, element3, max_Element);
+        System.out.println("Max is : "+max_Element);
         return max_Element;
     }
-
+/**
+ * Defining Array of element for
+ * different data types
+ * Passes this Array to find_Max()
+ * for finding max value
+ *
+ * @return No return
+ */
     public static void main(String[] args) {
-        //for Integer
-        Integer num1 =5, num2 =3, num3 =7;
-        //calling Static method internally
-        new MaxFinder(num1, num2, num3).find_Max();
 
-        // for Float
-        Float fnum1 =5.99f, fnum2 =30f, fnum3 =3.14f;
-        new MaxFinder(fnum1, fnum2, fnum3).find_Max();
+        //Array of different data types for multiple value
+        Integer[] intArray = {5,2,3,7,9,4,1};
+        Float [] floatArray ={3.14f, 5.99f, 30f, 23.43f, 10.43f};
+        String[] stringArray ={"Apple", "Watch", "Kite", "Sun", "Ball"};
 
-        //for String
-        String str1 ="Dog", str2 ="Monkey", str3 ="Cat";
-        new MaxFinder(str1, str2, str3).find_Max();
+        new MaxFinder(intArray).find_Max();
+        new MaxFinder(floatArray).find_Max();
+        new MaxFinder(stringArray).find_Max();
     }
 }
