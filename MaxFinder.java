@@ -41,9 +41,18 @@ public class MaxFinder <E extends Comparable <E>>{
                 max_Element = elementToCompare;
             }
         }
-        //printing result
-        System.out.println("Max is : "+max_Element);
+        //calling print_Max()
+        print_Max(max_Element);
+
         return max_Element;
+    }
+ /**
+  * This method prints max value
+  * @return No return
+  */
+    public static <E> void print_Max(E max_Value){
+        //printing max value
+        System.out.println("Max Value : "+max_Value);
     }
 /**
  * Defining Array of element for
