@@ -74,4 +74,37 @@ public class TU_MaxFinder {
         Float max_Number = MaxFinder.find_MaxFloat(num1, num2, num3);
         Assertions.assertEquals(30f,max_Number,"Validating Max Method");
     }
+/**
+ * Checking program gives correct maximum
+ * string /not
+ * when Maximum string is at 1st position
+ */
+    @Test
+   void whenMaxStringAt1Position() {
+        String str1 ="Cat", str2 ="Ball", str3 ="Apple";
+        String max_string = MaxFinder.find_MaxString(str1, str2, str3);
+        Assertions.assertEquals("Cat",max_string,"Validating Max Method");
+    }
+/**
+ * Checking program gives correct maximum
+ * string /not
+ * when Maximum string is at 2nd position
+ */
+    @Test
+    void whenMaxStringAt2Position() {
+        String str1 ="Ball", str2 ="Cat", str3 ="Apple";
+        String max_string = MaxFinder.find_MaxString(str1, str2, str3);
+        Assertions.assertEquals("Cat",max_string,"Validating Max Method");
+    }
+/**
+ * Checking program gives correct maximum
+ * string /not
+ * when Maximum string is at 3rd position
+ */
+    @Test
+    void whenMaxStringAt3Position() {
+        String str1 ="Apple", str2 ="Ball", str3 ="Cat";
+        String max_string = MaxFinder.find_MaxString(str1, str2, str3);
+        Assertions.assertEquals("Cat",max_string,"Validating Max Method");
+    }
 }
