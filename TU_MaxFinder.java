@@ -9,102 +9,71 @@ import org.junit.jupiter.api.Assertions;
  */
 public class TU_MaxFinder {
 /**
- * Checking program gives correct maximum
- * number / not
- * when Maximum number is at 1st position
+ * Checking program gives correct max element
+ * when Max element is at 1st position
  */
     @Test
-    void whenMaxNumAt1Position() {
+    void whenMaxAt1Position() {
+
         Integer num1 =7, num2 =3, num3 =5;
         Integer max_Number = MaxFinder.find_Max(num1, num2, num3);
         Assertions.assertEquals(7,max_Number,"Validating Max Method");
-    }
-/**
- * Checking program gives correct maximum
- * number / not
- * when Maximum number is at 2nd position
- */
-    @Test
-    void whenMaxNumAt2Position() {
-        Integer num1 =3, num2 =7, num3 =5;
-        Integer max_Number = MaxFinder.find_Max(num1, num2, num3);
-        Assertions.assertEquals(7,max_Number,"Validating Max Method");
-    }
-/**
- * Checking program gives correct maximum
- * number / not
- * when Maximum number is at 3rd position
- */
-    @Test
-    void whenMaxNumAt3Position() {
-        Integer num1 =3, num2 =5, num3 =7;
-        Integer max_Number = MaxFinder.find_Max(num1, num2, num3);
-        Assertions.assertEquals(7,max_Number,"Validating Max Method");
-    }
-/**
- * Checking program gives correct maximum
- * Floating no / not
- * when Maximum Floating no is at 1st position
- */
-    @Test
-   void whenMaxFloatAt1Position() {
-        Float num1 =30f, num2 =3.14f, num3 =5.99f;
-        Float max_Number = MaxFinder.find_Max(num1, num2, num3);
-        Assertions.assertEquals(30f,max_Number,"Validating Max Method");
-    }
-/**
- * Checking program gives correct maximum
- * floating no /not
- * when Maximum floating no is at 2nd position
- */
-    @Test
-    void whenMaxFloatAt2Position() {
-        Float num1 =3.14f, num2 =30f, num3 =5.99f;
-        Float max_Number = MaxFinder.find_Max(num1, num2, num3);
-        Assertions.assertEquals(30f,max_Number,"Validating Max Method");
-    }
-/**
- * Checking program gives correct maximum
- * float no / not
- * When Maximum floating no is at 3rd position
- */
-    @Test
-    void whenMaxFloatAt3Position() {
-        Float num1 =5.99f, num2 =3.14f, num3 =30f;
-        Float max_Number = MaxFinder.find_Max(num1, num2, num3);
-        Assertions.assertEquals(30f,max_Number,"Validating Max Method");
-    }
-/**
- * Checking program gives correct maximum
- * string /not
- * when Maximum string is at 1st position
- */
-    @Test
-   void whenMaxStringAt1Position() {
+
+        Float fnum1 =30f, fnum2 =3.14f, fnum3 =5.99f;
+        Float max_Float = MaxFinder.find_Max(fnum1, fnum2, fnum3);
+        Assertions.assertEquals(30f,max_Float,"Validating Max Method");
+
         String str1 ="Cat", str2 ="Ball", str3 ="Apple";
         String max_string = MaxFinder.find_Max(str1, str2, str3);
         Assertions.assertEquals("Cat",max_string,"Validating Max Method");
+
+        new MaxFinder(num1, num2, num3).find_Max();
+        new MaxFinder(fnum1, fnum2, fnum3).find_Max();
+        new MaxFinder(str1, str2, str3).find_Max();
     }
 /**
- * Checking program gives correct maximum
- * string /not
- * when Maximum string is at 2nd position
+ * Checking program gives correct max element
+ * when Max element is at 2nd position
  */
     @Test
-    void whenMaxStringAt2Position() {
+    void whenMaxAt2Position() {
+        Integer num1 =3, num2 =7, num3 =5;
+        Integer max_Number = MaxFinder.find_Max(num1, num2, num3);
+        Assertions.assertEquals(7,max_Number,"Validating Max Method");
+
+        Float fnum1 =3.14f, fnum2 =30f, fnum3 =5.99f;
+        Float max_Float = MaxFinder.find_Max(fnum1, fnum2, fnum3);
+        Assertions.assertEquals(30f,max_Float,"Validating Max Method");
+
         String str1 ="Ball", str2 ="Cat", str3 ="Apple";
         String max_string = MaxFinder.find_Max(str1, str2, str3);
         Assertions.assertEquals("Cat",max_string,"Validating Max Method");
+
+        new MaxFinder(num1, num2, num3).find_Max();
+        new MaxFinder(fnum1, fnum2, fnum3).find_Max();
+        new MaxFinder(str1, str2, str3).find_Max();
     }
 /**
- * Checking program gives correct maximum
- * string /not
- * when Maximum string is at 3rd position
+ * Checking program gives correct max element
+ * when Max element is at 3rd position
  */
     @Test
-    void whenMaxStringAt3Position() {
+    void whenMaxAt3Position() {
+
+        Integer num1 =3, num2 =5, num3 =7;
+        Integer max_Number = MaxFinder.find_Max(num1, num2, num3);
+        Assertions.assertEquals(7,max_Number,"Validating Max Method");
+
+        Float fnum1 =5.99f, fnum2 =3.14f, fnum3 =30f;
+        Float max_Float = MaxFinder.find_Max(fnum1, fnum2, fnum3);
+        Assertions.assertEquals(30f,max_Float,"Validating Max Method");
+
         String str1 ="Apple", str2 ="Ball", str3 ="Cat";
         String max_string = MaxFinder.find_Max(str1, str2, str3);
         Assertions.assertEquals("Cat",max_string,"Validating Max Method");
+
+        new MaxFinder(num1, num2, num3).find_Max();
+        new MaxFinder(fnum1, fnum2, fnum3).find_Max();
+        new MaxFinder(str1, str2, str3).find_Max();
     }
 }
