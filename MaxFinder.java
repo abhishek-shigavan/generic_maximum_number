@@ -1,7 +1,7 @@
 package com.abhi.max;
 /**
- * MaxFinder -- Finding Maximum Integer & Floating number 
- *              between 3 Integers & Floating numbers
+ * MaxFinder -- Finding Maximum Integer, Floating number 
+ *              String between each 3  values
  *
  * @author Abhishek Shigavan
  */
@@ -55,10 +55,34 @@ public class MaxFinder {
         return max_Number;
     }
 /**
- * This method declares 3 integer & floating
- * number
- * Calls methods using these no as argument
- * to find max no
+ * This method takes 3 Strings & find 
+ * maximum String using compareTo()
+ *
+ *
+ * @return max String
+ */ 	
+	public static String find_MaxString(String str1, String str2, String str3) {
+       
+		//setting 1st string as max
+        String max_String = str1;
+       
+        //comparing 2nd & 3rd string with max using compareTo()
+        if(str2.compareTo(max_String)>0){
+            max_String = str2;
+        }
+        if(str3.compareTo(max_String)>0){
+            max_String = str3;
+        }
+       
+        //printing result
+        System.out.printf("Max String between %s, %s, %s is %s \n",str1, str2, str3, max_String);
+        return max_String;
+    }
+/**
+ * This method declares 3 integer, floating
+ * number & strings each
+ * Calls methods using these no & string as argument
+ * to find max between them.
  *
  * @return No return
  */
@@ -71,5 +95,9 @@ public class MaxFinder {
     	//floating numbers
         Float num1 =5.99f, num2 =3.14f, num3 =30f;
         float maxFloat = find_MaxFloat(num1, num2, num3);
+        
+        //Strings
+    	String str1 ="Dog", str2 ="Monkey", str3 ="Cat";
+        String maxString = find_MaxString(str1, str2, str3);
     }
 }
